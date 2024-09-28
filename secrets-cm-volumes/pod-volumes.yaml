@@ -4,18 +4,19 @@ metadata:
   creationTimestamp: null
   labels:
     run: rakshith
-  name: rakshith-demo
+  name: hostpath-pod
 spec:
   volumes:
-  - name: secret-volume
-    secret:
-      secretName: rakshith     
+  - name: hostpath-volume
+    hostPath:
+      path: /data  
+      type: DirectoryOrCreate 
   containers:
   - image: nginx
     name: rakshith
     resources: {}
     volumeMounts:
-    - name: secret-volume
+    - name: hostpath-volume
       mountPath: /var/lib
   dnsPolicy: ClusterFirst
   restartPolicy: Always

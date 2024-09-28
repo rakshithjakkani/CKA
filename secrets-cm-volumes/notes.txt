@@ -13,3 +13,9 @@ secrets:-
         * k run <podName> --image nginx -o yaml --dry-run=client > pod.yaml
             --> This command will give you pod configuration file. make the changes as files are there in this directory    
             --> go ahead and apply "kubectl apply -f pod.yaml"
+
+volumes:- 
+    * There are multiple volumes supported by the kubernetes. as of now, we are going with the hostpath volume type
+    * generally this volume is created on the underlaying hostpath
+    * use pod-volumes.yaml configuration file for the practise. 
+    * this volume is also mounted as same as secrets mounting. but we have to create volume. that we can do by specifying in pod yaml file
