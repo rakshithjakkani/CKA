@@ -1,0 +1,15 @@
+secrets:-
+    * Kubernetes secrets are used to store the secrets. which are then used by the pods
+    * As per best practices, you can't directly pass your confidential information on pod configuration. so in kubernetes, we use the secrets
+    * there are 2 ways that you can pass your secrets to pods, 1. via env variables 2. volumes
+    * Below command to is used to create a secret with two key values pairs. we will use each key pair with different approach
+    * k create secret generic rakshith --from-literal=env=prod --from-literal=app=nginx  -o yaml --dry-run=client > secret.yaml
+    * k run rakshith --image nginx 
+    Practicle:
+        * k create secret generic rakshith --from-literal=env=prod --from-literal=app=nginx  -o yaml --dry-run=client > secret.yaml
+            --> Above command will create a secret configuration file in your current directory which contains app and env secrets
+            --> then go ahead and apply this file "kubectl apply -f secret.yaml"
+        
+        * k run <podName> --image nginx -o yaml --dry-run=client > pod.yaml
+            --> This command will give you pod configuration file. make the changes as files are there in this directory    
+            --> go ahead and apply "kubectl apply -f pod.yaml"
