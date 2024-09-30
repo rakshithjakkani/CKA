@@ -18,4 +18,4 @@ volumes:-
     * There are multiple volumes supported by the kubernetes. as of now, we are going with the hostpath volume type
     * generally this volume is created on the underlaying hostpath
     * use pod-volumes.yaml configuration file for the practise. 
-    * this volume is also mounted as same as secrets mounting. but we have to create volume. that we can do by specifying in pod yaml file
+    * this volume is also mounted as same as secrets mounting. but we have to create volume. that we can do by specifying in pod
