@@ -22,5 +22,21 @@ volumes:-
 PV-PVC:
     * pv which is used to create a volume in kubernetes
     * pvc which is used to aquire the pv and attach it to the pod
-    * while performing exame, if you not remember the yaml configuration for pv pvc, you can use kubectl explain command 
-    
+    * while performing exame, if you not remember the yaml configuration for pv pvc, you can use kubectl explain command  
+    PVC_Volume_Expansion
+        * Generally when we create pv and pvc we can't expand the volume but with some small changes we can do
+        -> k get storageclass
+        -> k get sc <NAME> -o yaml ---> in annotations, we should see "allowVolumeExpansion: true"
+        -> open your pvc yaml file and expand the volume size
+        -> restart the pod  --> its mandetory
+
+ConfigMaps:
+    * we can only mound as a volume to the container
+    * k create cm <Name> --from-literal=dev.url=hi.rakshith.command
+    * k create cm <Name> --from-file=<filePath/fileName>
+
+securityContext:
+    * securityContext will applied at the pod level not in the container level
+    * "runAsUser" to set user id
+    * "runAsGroup" to set group id
+    * "fsGroup" if you create any files or anything in the specified volume for the pod. this fsGroup id will attached to that file 
