@@ -19,3 +19,8 @@ volumes:-
     * generally this volume is created on the underlaying hostpath
     * use pod-volumes.yaml configuration file for the practise. 
     * this volume is also mounted as same as secrets mounting. but we have to create volume. that we can do by specifying in pod
+PV-PVC:
+    * pv which is used to create a volume in kubernetes
+    * pvc which is used to aquire the pv and attach it to the pod
+    * while performing exame, if you not remember the yaml configuration for pv pvc, you can use kubectl explain command 
+    
