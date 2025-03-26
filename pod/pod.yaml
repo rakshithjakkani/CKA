@@ -1,0 +1,11 @@
+# can also generate using kubectl run <PodName> --image <image>
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: earth
+  name: earth
+spec:
+  containers:
+  - image: nginx
+    name: earth

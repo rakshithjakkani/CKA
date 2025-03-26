@@ -31,7 +31,7 @@ PV-PVC:
         -> restart the pod  --> its mandetory
 
 ConfigMaps:
-    * we can only mound as a volume to the container
+    * we can only mount as a volume to the container
     * k create cm <Name> --from-literal=dev.url=hi.rakshith.command
     * k create cm <Name> --from-file=<filePath/fileName>
 
