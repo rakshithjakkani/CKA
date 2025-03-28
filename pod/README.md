@@ -3,7 +3,14 @@
     # kubectl run <podName> --image -o yaml --dry-run=client --command -- ping -c 60 google.com 
     # kubectl explain pod --> will give you yaml order of pod. You can fetch it for any other object in kubernetes
     # kubectl run <podName> --image <Image> --port=8080 -o yaml --dry-run=client --> To expose the container port
-    # to create a yaml file for the command-pod.yaml
+        # to create a yaml file for the command-pod.yaml
+    # kubectl run <PodName> --image <image> -l key=value,key=value
+    # kubectl get <PodName> -l key=value,key=value
+    # kubectl get <PodName> --show-labels
+    # kubectl label pod <podName> key=vlaue
+    # kubectl label pod <PodName> key- --> to remove the labels to the pods
+    # # kubectl label pods --all key=value --> to label all the pods in the namespace
+
 # Docker cli commands
     # docker build -t <ImageName> . --> build the docker image
     # docker run <ImageName> 
