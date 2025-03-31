@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: teams
+  name: teams
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: teams
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: teams
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: key
+              # In(schedule on matched node), NotIn(do not schedule on matches labels), Exist(only key match is enough to shedule), DoesNotExist(if key matched, will not schedule on matched node)
+                operator: In 
+                values:
+                - value-1
+                - value-2
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

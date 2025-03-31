@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cka-course
+  name: cka-course
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cka-course
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: cka-course
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
