@@ -9,6 +9,7 @@
 
 # RBAC Practicle
 ## Create a role with a read-only access 
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
