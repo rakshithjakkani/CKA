@@ -8,7 +8,7 @@
     # RBAC: The most used and famous authorization type in kubernetes. where we can give granular permission to the users using Role & RoleBinding, ClusterRole & ClusterRoleBinding. 
 
 # RBAC Practicle
-## Create a role with a read-only access 
+## Create a role with a read-only access
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -24,3 +24,5 @@ rules:
   - get
   - list
   - watch
+
+### test
